@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+wh_edit
+
+# Environment Variables
+env.json
+webhook.json
+
