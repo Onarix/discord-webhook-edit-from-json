@@ -37,15 +37,5 @@ COPY . /app
 # Build your application using g++
 RUN g++ -std=c++17 -I/usr/include/dpp -o wh_edit src/wh_edit.cpp -L/usr/lib -ldpp -lcurl -lssl -lcrypto
 
-# Make env.json file template
-RUN touch env.json
-RUN if [ ! -s env.json ]; then \
-    echo '{ \
-        "BOT_TOKEN" : "Put your bot token here", \
-        "WEBHOOK_URL" : "Put your webhook URL here", \
-        "JSON_FILENAME" : "Put the directory of your JSON webhook file" \
-    }' > env.json; \
-fi
-
 # Set the entrypoint to run your application
 CMD ["./wh_edit"]
